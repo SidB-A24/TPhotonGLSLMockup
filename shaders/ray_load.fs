@@ -1,9 +1,10 @@
 #version 330
 
+out vec4 FragColor;
+
 uniform vec2 u_lightLocation;
 uniform float u_lightBrightness;
 
-out vec4 rayData;
 //x, y -> rayOrigin
 //z -> rayDirRadians
 //w -> steps travelled.
@@ -17,5 +18,6 @@ void main()
 {
     float index = gl_FragCoord.x;
 
-    rayData =  vec4(u_lightLocation, index, 0);
+    //FragColor =  vec4(u_lightLocation, index, 1.0);
+    FragColor = vec4(1.0, 0.0, 0.0, 1.0);
 }

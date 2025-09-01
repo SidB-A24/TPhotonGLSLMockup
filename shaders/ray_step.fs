@@ -8,8 +8,8 @@ void main()
 {
     ivec2 currentTexelCoord = ivec2(gl_FragCoord.xy);
 
-    vec4 currentRay = texelFetch(rayData, currentTexelCoord);
+    vec4 currentRay = texelFetch(u_rayTex, currentTexelCoord, 0);
 
     //Stepping the ray. The actual head pos can be determined using origin + direction * distance.
-    rayData = vec4(currentRay.xyz, currentRay.w + 1);
+    rayData = vec4(currentRay.xyz, currentRay.w + 1.0);
 }
